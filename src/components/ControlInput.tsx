@@ -20,10 +20,10 @@ function ControlInput({
   ) => {
     let newValue;
     // Safely access 'checked' only if the target is an HTMLInputElement and its type is 'checkbox'
-    console.log(typeElement);
+    // console.log(typeElement);
     if (typeElement === "checkbox") {
       newValue = (e.target as HTMLInputElement).checked; // Type assertion for checkbox
-      console.log("dddata");
+      // console.log("dddata");
     } else {
       newValue = e.target.value;
     }

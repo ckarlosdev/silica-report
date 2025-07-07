@@ -4,3 +4,5 @@ export const searchJobURL = (jobNumber: string) =>
   `${base}/job/number/${jobNumber}`;
 
 export const searchControlsURL = () => `${base}/controls`;
+
+export const submitSilicaURL = () => `${base}/silica`;

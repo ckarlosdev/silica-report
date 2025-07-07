@@ -59,5 +59,38 @@ export default <T>(url?: string) => {
       });
   };
 
-  return { data, loading, error, search };
+  const postData = async (url: string, payload: any): Promise<T | undefined> => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.post<T>(url, payload);
+      setData(response.data); 
+      return response.data; 
+    } catch (e: any) {
+      console.error("POST request error:", e);
+      setError(e);
+      // Puedes lanzar el error de nuevo o devolver undefined/null según tu manejo de errores
+      throw e; // Lanzamos el error para que el componente que llama lo pueda capturar
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const putData = async (url: string, payload: any): Promise<T | undefined> => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.put<T>(url, payload);
+      setData(response.data); // Opcional: actualizar 'data' con la respuesta del PUT
+      return response.data;
+    } catch (e: any) {
+      console.error("PUT request error:", e);
+      setError(e);
+      throw e;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { data, loading, error, search, postData, putData };
 };

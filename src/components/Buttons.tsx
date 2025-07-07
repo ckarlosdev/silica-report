@@ -1,13 +1,15 @@
 import { Button, Col, Row } from "react-bootstrap";
 
-type Props = {};
+type Props = {
+  onClick:() => void;
+};
 
-function Buttons({}: Props) {
+function Buttons({ onClick }: Props) {
   return (
     <>
       <Row className="g-2">
         <Col md className="text-center">
-          <Button variant="secondary" size="lg">
+          <Button variant="secondary" size="lg" onClick={onClick}>
             Back
           </Button>
         </Col>
