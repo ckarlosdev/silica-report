@@ -670,7 +670,7 @@ export const initDrawingApp = (
     );
   });
 
-  canvasElement.addEventListener("mouseout", (e: MouseEvent) => {
+  canvasElement.addEventListener("mouseout", () => {
     if (currentMode === "drawing" && isDrawing) {
       isDrawing = false;
       console.log("[MOUSE_OUT] Drawing stopped.");

@@ -1,5 +1,5 @@
 import { Accordion, Col, Row } from "react-bootstrap";
-import { Control, Silica, SilicaControl } from "../types";
+import { Control, Silica } from "../types";
 import useHttpData from "../hooks/useHttpData";
 import { searchControlsURL } from "../hooks/urls";
 import { useEffect, useState } from "react";
