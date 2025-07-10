@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { Job, Silica } from "../types";
+import { Silica } from "../types";
 import useHttpData from "./useHttpData";
 import { submitSilicaURL } from "./urls";
 
 export default () => {
-  const [jobSelected, setJobSelected] = useState<Job | undefined>(undefined);
 
   const {
     data: submitAnswer,

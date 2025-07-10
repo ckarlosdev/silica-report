@@ -2,7 +2,7 @@ import { Col, FloatingLabel, Form, Row } from "react-bootstrap";
 import { Silica } from "../types";
 
 type Props = {
-  silicaData?: Silica;
+  silicaData: Silica;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 

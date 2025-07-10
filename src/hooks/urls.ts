@@ -6,3 +6,10 @@ export const searchJobURL = (jobNumber: string) =>
 export const searchControlsURL = () => `${base}/controls`;
 
 export const submitSilicaURL = () => `${base}/silica`;
+
+export const searchSilicaByIdURL = (silicaId: number) =>
+  `${base}/silica/${silicaId}`;
+
+export const searchJobIdURL = (jobId: number) => `${base}/job/${jobId}`;
+
+export const searchEmployeesURL = () => `${base}/employee`;
