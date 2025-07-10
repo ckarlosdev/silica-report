@@ -1,7 +1,7 @@
 {
   "name": "silica-report",
   "private": true,
-  "homepage": "http://ckarlosdev.github.io/silica-report",
+  "homepage": "http://ckarlosdev.github.io/silica-report/",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
