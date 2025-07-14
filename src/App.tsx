@@ -21,6 +21,9 @@ function App() {
   };
 
   // Estados principales
+  // const [formErrors, setFormErrors] = useState<Record<string, string | null>>(
+  //   {}
+  // );
   const [supervisorId, setSupervisorId] = useState<number>();
   const [jobNumber, setJobNumber] = useState<string | null>(null);
   const [silicaId, setSilicaId] = useState<number | null>(null);
@@ -111,6 +114,35 @@ function App() {
     }
   }, [silicaDetails]);
 
+  const validateForm = (): boolean => {
+    let errors: Record<string, string | null> = {};
+    let isValid = true;
+    // const diagramData = paintRef.current?.getDrawingData();
+
+    // Validate supervisorId
+    if (
+      !supervisorId ||
+      supervisorId === 0 ||
+      supervisorId.toString() === "0"
+    ) {
+      errors.selectSupervisor = "please select a supervisor.";
+      isValid = false;
+    } else {
+      errors.selectSupervisor = null;
+    }
+
+    // Validate eventDate
+    if (!silicaDetails.eventDate || silicaDetails.eventDate.trim() === "") {
+      errors.eventDate = "Date selected is wrong.";
+      isValid = false;
+    } else {
+      errors.eventDate = null;
+    }
+
+    // setFormErrors(errors); // Update the state with all detected errors
+    return isValid;
+  };
+
   // Handlers
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -157,6 +189,13 @@ function App() {
   };
 
   const handleSubmit = async () => {
+    const isValid = validateForm();
+
+    if (!isValid) {
+      alert("Supervisor or Date field missing.");
+      return; // Stop the submission if there are validation errors
+    }
+
     const diagramData = paintRef.current?.getDrawingData();
     const updatedData: Silica = {
       ...silicaDetails,

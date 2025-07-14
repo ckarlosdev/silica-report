@@ -85,13 +85,13 @@ export const initDrawingApp = (
   if (totalImages > 0) {
     imagesLoadedPromise = new Promise<void>((resolve, reject) => {
       resolveImagesLoadedPromise = () => {
-        imageLoadStatusElement.textContent = "Todas las imágenes cargadas.";
-        imageLoadStatusElement.style.color = "green";
+        // imageLoadStatusElement.textContent = "Todas las imágenes cargadas.";
+        // imageLoadStatusElement.style.color = "green";
         resolve();
       };
       rejectImagesLoadedPromise = (reason) => {
-        imageLoadStatusElement.textContent = `Error al cargar algunas imágenes. Revisa la consola.`;
-        imageLoadStatusElement.style.color = "red";
+        // imageLoadStatusElement.textContent = `Error al cargar algunas imágenes. Revisa la consola.`;
+        // imageLoadStatusElement.style.color = "red";
         reject(reason);
       };
 
@@ -119,9 +119,9 @@ export const initDrawingApp = (
   } else {
     // If no images to load, resolve the promise immediately
     imagesLoadedPromise = Promise.resolve();
-    imageLoadStatusElement.textContent =
-      "No hay imágenes en la paleta para cargar.";
-    imageLoadStatusElement.style.color = "gray";
+    // imageLoadStatusElement.textContent =
+    //   "No hay imágenes en la paleta para cargar.";
+    // imageLoadStatusElement.style.color = "gray";
   }
 
   // --- Canvas Resizing Functions ---

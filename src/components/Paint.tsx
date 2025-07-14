@@ -1,10 +1,5 @@
 // components/Paint.tsx
-import {
-  useEffect,
-  useRef,
-  useImperativeHandle,
-  forwardRef,
-} from "react";
+import { useEffect, useRef, useImperativeHandle, forwardRef } from "react";
 import "../styles/paint.css";
 import bocina from "../assets/bocina.png";
 import sprayer from "../assets/sprayer.png";
@@ -189,7 +184,7 @@ const Paint = forwardRef<PaintHandle, Props>(({ silicaData }, ref) => {
         ref={imageLoadStatusRef}
         style={{ marginTop: "10px", textAlign: "center", fontSize: "0.9em" }}
       >
-        Loading images...
+        .
       </div>
     </div>
   );

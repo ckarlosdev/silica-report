@@ -18,7 +18,7 @@ function Input({ fieldValue, fieldName, fieldType }: Props) {
           readOnly
           type={fieldType ? fieldType : ""}
           value={fieldValue ? fieldValue : ""}
-          style={{ fontWeight: "bold", fontSize: "22px" }}
+          style={{ fontWeight: "bold", fontSize: "18px", textAlign: "center" }}
         />
       </FloatingLabel>
     </>
